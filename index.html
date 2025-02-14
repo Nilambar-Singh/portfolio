@@ -3,287 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nilambar Kumar Singh - Data Scientist Portfolio</title>
+    <title>Nilambar Kumar Singh - Full Stack Developer</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <style>
-        /* Google Font Integration */
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-
-        /* General Reset and Body Style */
-        body, html {
+        body {
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            font-family: 'Roboto', sans-serif;
+            background: #f4f4f4;
             color: #333;
-            line-height: 1.6;
-            background-color: #f4f7fa;
         }
-
-        /* Header Style */
         header {
-            background-color: #2C3E50;
+            background: #2c3e50;
             color: white;
-            padding: 20px 0;
+            padding: 20px;
             text-align: center;
         }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        header p {
-            margin: 5px 0;
-            font-size: 1.2rem;
-        }
-
-        /* Navigation Bar */
         nav {
-            background-color: #34495E;
-            padding: 10px 0;
+            background: #34495e;
+            padding: 10px;
             text-align: center;
         }
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.1rem;
-            transition: color 0.3s ease;
+            margin: 15px;
+            font-size: 18px;
         }
-        nav a:hover {
-            color: #1ABC9C;
-        }
-
-        /* Sections Styling */
         section {
-            padding: 40px 20px;
-            margin: 20px 0;
-        }
-
-        /* About Me Section */
-        .about-me {
-            background-color: #ffffff;
+            padding: 40px;
+            margin: 20px;
+            background: white;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         }
-        .about-me h2 {
-            font-size: 2rem;
+        .skills div {
+            background: #ddd;
+            border-radius: 5px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        .skills div span {
+            display: block;
+            background: #3498db;
             text-align: center;
-            color: #2C3E50;
-        }
-        .about-me p {
-            font-size: 1.1rem;
-            text-align: justify;
-            padding: 20px;
-            color: #7f8c8d;
-        }
-
-        /* Skills Section */
-        .skills {
-            background-color: #ecf0f1;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .skills h2 {
-            font-size: 2rem;
-            text-align: center;
-            color: #2C3E50;
-        }
-        .skills ul {
-            list-style-type: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .skills li {
-            background-color: #1ABC9C;
             color: white;
-            margin: 10px 15px;
-            padding: 15px 30px;
-            border-radius: 25px;
-            font-size: 1.1rem;
+            padding: 5px;
+            border-radius: 5px;
         }
-
-        /* Experience Section */
-        .experience {
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
-        .experience h2 {
-            font-size: 2rem;
-            text-align: center;
-            color: #2C3E50;
-        }
-        .experience .job {
-            margin-bottom: 30px;
-        }
-        .experience .job h3 {
-            font-size: 1.5rem;
-            color: #1ABC9C;
-        }
-        .experience .job p {
-            font-size: 1rem;
-            color: #7f8c8d;
-        }
-
-        /* Education Section */
-        .education {
-            background-color: #ecf0f1;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .education h2 {
-            font-size: 2rem;
-            text-align: center;
-            color: #2C3E50;
-        }
-        .education p {
-            font-size: 1.1rem;
-            text-align: center;
-            padding: 20px;
-            color: #7f8c8d;
-        }
-
-        /* Contact Section */
-        .contact {
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .contact h2 {
-            font-size: 2rem;
-            text-align: center;
-            color: #2C3E50;
-        }
-        .contact p {
-            font-size: 1.1rem;
-            text-align: center;
-            padding: 20px;
-            color: #7f8c8d;
-        }
-        .contact a {
-            color: #1ABC9C;
-            text-decoration: none;
-        }
-
-        /* Footer Style */
-        footer {
-            background-color: #2C3E50;
+        .contact button {
+            background: #3498db;
             color: white;
-            text-align: center;
-            padding: 15px 0;
-            margin-top: 20px;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
         }
-
-        /* Media Query for Responsiveness */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-            .skills ul {
-                flex-direction: column;
+        @media (max-width: 600px) {
+            section {
+                padding: 20px;
+                margin: 10px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Section -->
-    <header>
-        <h1>Nilambar Kumar Singh</h1>
-        <p>Data Scientist</p>
-        <p>Email: <a href="mailto:nilambar844@gmail.com" style="color:white;">nilambar844@gmail.com</a> | Phone: 9304314814</p>
-    </header>
+<header>
+    <h1>Nilambar Kumar Singh</h1>
+    <h3>Full Stack Developer</h3>
+    <p>📞 9304314814 | ✉ <a href="mailto:nilambar844@gmail.com" style="color:white;">nilambar844@gmail.com</a> | <a href="https://www.linkedin.com/in/nilambar-singh-9a61242a9" target="_blank" style="color:white;">LinkedIn</a></p>
+</header>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <a href="#about">About Me</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<nav>
+    <a href="#about">About Me</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
 
-    <!-- About Me Section -->
-    <section id="about" class="about-me">
-        <h2>About Me</h2>
-        <p>
-            I am a passionate Data Scientist with expertise in machine learning, data analysis, and predictive modeling. 
-            With a background in computer science and a specialization in Artificial Intelligence and Machine Learning (AIML), 
-            I thrive on solving complex problems using data. My skill set includes Python, SQL, Power BI, Excel, and statistical analysis, 
-            allowing me to transform raw data into actionable insights.
-        </p>
-    </section>
+<section id="about">
+    <h2>About Me</h2>
+    <p>I am a passionate Full Stack Developer with expertise in web and mobile development. I specialize in building high-performance applications using modern technologies.</p>
+</section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>Python</li>
-            <li>NumPy</li>
-            <li>Pandas</li>
-            <li>Power BI</li>
-            <li>Statistics & Probability</li>
-            <li>SQL</li>
-            <li>Machine Learning</li>
-            <li>Data Visualization</li>
-            <li>Excel</li>
-        </ul>
-    </section>
+<section id="education">
+    <h2>Education</h2>
+    <p><strong>Jaipur National University</strong> - Bachelor's in Computer Science</p>
+</section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <h2>Experience</h2>
-        <div class="job">
-            <h3>Data Analyst - Microsoft (June 2022 - Present)</h3>
-            <p>Responsibilities:
-                <ul>
-                    <li>Developed and implemented machine learning models for predictive analysis.</li>
-                    <li>Processed and cleaned large datasets using Python and SQL.</li>
-                    <li>Collaborated with cross-functional teams to design data-driven solutions.</li>
-                    <li>Visualized data insights using Power BI for executive decision-making.</li>
-                </ul>
-            </p>
-        </div>
-        <div class="job">
-            <h3>Junior Data Scientist - Google (Jan 2020 - May 2022)</h3>
-            <p>Responsibilities:
-                <ul>
-                    <li>Worked with large-scale datasets to identify trends and anomalies.</li>
-                    <li>Built and evaluated predictive models using machine learning algorithms.</li>
-                    <li>Assisted in the creation of automated reporting tools in Python and Excel.</li>
-                </ul>
-            </p>
-        </div>
-    </section>
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+        <div><span style="width: 90%;">HTML, CSS, JavaScript (90%)</span></div>
+        <div><span style="width: 85%;">React.js & Node.js (85%)</span></div>
+        <div><span style="width: 80%;">MongoDB, MySQL (80%)</span></div>
+        <div><span style="width: 75%;">DevOps & Cloud Computing (75%)</span></div>
+        <div><span style="width: 70%;">AI/ML Fundamentals (70%)</span></div>
+    </div>
+</section>
 
-    <!-- Education Section -->
-    <section id="education" class="education">
-        <h2>Education</h2>
-        <p>BCA in Computer Applications with Specialization in Artificial Intelligence and Machine Learning</p>
-        <p>Jaipur National University, Graduating Year: 2026</p>
-    </section>
+<section id="experience">
+    <h2>Experience</h2>
+    <p><strong>Google</strong> - Software Engineer Intern</p>
+    <p>Worked on scalable backend APIs and cloud deployment.</p>
+    <p><strong>Microsoft</strong> - Full Stack Developer Intern</p>
+    <p>Developed web applications using React and Azure services.</p>
+</section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <p>1. Predictive Analytics for Sales Forecasting (Using Python and Machine Learning) - Developed a machine learning model that predicted future sales trends based on historical data.</p>
-        <p>2. Data Visualization Dashboard (Using Power BI) - Created an interactive dashboard to visualize real-time company performance metrics.</p>
-    </section>
+<section id="projects">
+    <h2>Projects</h2>
+    <p><strong>Portfolio Website</strong> - Showcasing my skills and projects.</p>
+    <p><strong>E-Commerce App</strong> - Built a functional online store using React and Node.js.</p>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <p>If you'd like to discuss any potential projects or opportunities, feel free to reach out to me!</p>
-        <p>Email: <a href="mailto:nilambar844@gmail.com">nilambar844@gmail.com</a></p>
-        <p>Phone: 9304314814</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/nilambar-singh-9a61242a9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " target="_blank">linkedin.com/in/nilambar-kumar-singh</a></p>
-    </section>
+<section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contact-form" class="contact">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 Nilambar Kumar Singh - All Rights Reserved</p>
-    </footer>
+<script>
+    (function(){
+        emailjs.init("fuinMd3RcuZLrv_Rx"); 
+    })();
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        emailjs.sendForm('service_o19cwen', 'template_gljalgr', this)
+            .then(function() {
+                alert('Message sent successfully!');
+            }, function(error) {
+                alert('Failed to send message. Try again later.');
+            });
+    });
+</script>
 
 </body>
 </html>
